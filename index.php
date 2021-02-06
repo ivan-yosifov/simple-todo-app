@@ -1,0 +1,1 @@
+<h1>Hello logged in user</h1>
