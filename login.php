@@ -52,6 +52,7 @@ if(isset($_POST['login'])){
     		// Log in user
     		unset($_SESSION['msg']);
     		$_SESSION['user_id'] = $result->id;
+    		$_SESSION['username'] = $result->username;
         header('Location: index.php');
         exit();
     	}

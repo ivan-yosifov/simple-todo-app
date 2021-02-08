@@ -36,7 +36,7 @@ if(isset($_SESSION['user_id'])){
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="./index.php">Todo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,19 +44,23 @@ if(isset($_SESSION['user_id'])){
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="./index.php">Todo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" aria-current="page" href="./add.php">Add task</a>
             </li>
           </ul>
-          <ul class="navbar-nav">
+          <ul class="navbar-nav align-items-center">
+            <?php if($logged_in): ?>
+            <li class="nav-item me-4 text-white"><?php echo $_SESSION['username']; ?></li>
+            <li class="nav-item">
+              <a href="./logout.php" class="btn btn-outline-secondary">Logout</a>
+            </li>
+            <?php else: ?>
             <li class="nav-item">
               <a href="./register.php" class="btn btn-outline-primary me-2">Register</a>
             </li>
             <li class="nav-item">
               <a href="./login.php" class="btn btn-outline-success">Login</a>
             </li>
+            <?php endif; ?>
           </ul>
         </div>
       </div>
@@ -67,6 +71,7 @@ if(isset($_SESSION['user_id'])){
         <div class="col-md-12">
           <?php if($num_tasks == 0): ?>
           <h2 class="my-4 text-center">You have not tasks. Hurray!</h2>
+          <p class="lead text-center mt-5">Wanna get busy? <a href="./add.php" class="btn btn-success">Add a task ✍️</a></p>
           <?php else: ?>
           <h2 class="my-4 text-center">Current tasks</h2>
           <table class="table table-striped">
