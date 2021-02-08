@@ -91,7 +91,7 @@ if(isset($_POST['register'])){
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="#">Todo</a>
+              <a class="nav-link" aria-current="page" href="./index.php">Todo</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
