@@ -105,7 +105,10 @@ if(isset($_SESSION['user_id'])){
                     <input type="hidden" name="task_id" value="<?php echo $task->task_id; ?>">
                     <input type="submit" value="Update" name="update" class="btn btn-warning btn-sm">
                   </form>
-                  <a href="./delete.php?id=<?php echo $task->task_id; ?>" class="btn btn-danger btn-sm">Delete</a>
+                  <form action="<?php echo htmlspecialchars('./delete.php'); ?>" class="d-inline" method="post">
+                    <input type="hidden" name="task_id" value="<?php echo $task->task_id; ?>">
+                    <input type="submit" value="Delete" name="delete" class="btn btn-danger btn-sm">
+                  </form>
                 </td>
               </tr>
               <?php endforeach; ?>
