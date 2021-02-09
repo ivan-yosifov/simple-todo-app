@@ -2,6 +2,10 @@
 session_start();
 
 // TODO: add logic that prevents logged users from accessing page
+if(!isset($_SESSION['user_id'])){
+  header('Location: index.php');
+  exit();
+}
 
 require_once './db.php';
 
