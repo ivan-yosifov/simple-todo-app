@@ -88,7 +88,18 @@ if(isset($_SESSION['user_id'])){
               <tr>
                 <th scope="row"><?php echo $tasks_count++; ?></th>
                 <td><?php echo $task->name; ?></td>
-                <td><?php echo date('j M, Y', strtotime($task->date)); ?></td>
+                <td><?php echo date('j M, Y', strtotime($task->date)); ?>
+
+
+                <?php
+                  $d1 = strtotime(date('j M Y', strtotime($task->date)));
+                  $d2 = strtotime(date('j M Y'));
+                  if($d1 == $d2){
+                    echo '<span class="fw-bold text-success fst-italic">due today</span>';
+                  }else if($d1 < $d2){
+                    echo '<span class="fw-bold text-danger fst-italic">overdue <span class="fst-normal">💣</span></span>';
+                  }
+                ?></td>
                 <td class="text-center">
                   <a href="./update.php?id=<?php echo $task->task_id; ?>" class="btn btn-warning btn-sm">Update</a>
                   <a href="./delete.php?id=<?php echo $task->task_id; ?>" class="btn btn-danger btn-sm">Delete</a>
