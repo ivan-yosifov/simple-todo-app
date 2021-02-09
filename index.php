@@ -19,8 +19,8 @@ if(isset($_SESSION['user_id'])){
 ?>
 
 <?php require('./header.php'); ?>
-    <div class="container" style="margin-top:60px;">
-      <?php if($logged_in): ?>
+<?php if($logged_in): ?>
+    <div class="container" style="margin-top:60px;">      
       <div class="row">
         <div class="col-md-12">
           <?php if($num_tasks == 0): ?>
@@ -71,8 +71,20 @@ if(isset($_SESSION['user_id'])){
           <?php endif; ?>
         </div>
       </div>
-      <?php endif; ?>
+      
     </div>
+    <?php else: ?>
+        <div class="center-form">
+        <figure class="text-center m-auto">
+          <blockquote class="blockquote">
+            <p class="fs-2">Amateurs sit and wait for inspiration, the rest of us just get up and go to work.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            <cite title="Stephen King" class="fs-4">Stephen King</cite>
+          </figcaption>
+        </figure>
+      </div>
+      <?php endif; ?>
    
 
 <?php require('./footer.php'); ?>
