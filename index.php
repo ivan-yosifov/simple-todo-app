@@ -101,7 +101,10 @@ if(isset($_SESSION['user_id'])){
                   }
                 ?></td>
                 <td class="text-center">
-                  <a href="./update.php?id=<?php echo $task->task_id; ?>" class="btn btn-warning btn-sm">Update</a>
+                  <form action="<?php echo htmlspecialchars('./update.php'); ?>" class="d-inline" method="post">
+                    <input type="hidden" name="task_id" value="<?php echo $task->task_id; ?>">
+                    <input type="submit" value="Update" name="update" class="btn btn-warning btn-sm">
+                  </form>
                   <a href="./delete.php?id=<?php echo $task->task_id; ?>" class="btn btn-danger btn-sm">Delete</a>
                 </td>
               </tr>
