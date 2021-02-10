@@ -55,7 +55,6 @@ if(isset($_POST['add'])){
 
 <?php require ('./header.php'); ?>
     <div class="container" style="margin-top:60px;">
-      <?php print_r($_SESSION); ?>
       <h1 class="pt-5 text-center">Add A Task</h1>
       <form class="mt-5" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <?php if(isset($_SESSION['msg'])): ?>
